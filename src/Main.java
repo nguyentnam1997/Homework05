@@ -14,35 +14,56 @@ public class Main {
             }
             switch (n) {
                 case 1 -> {
-                    System.out.println("Mời nhập chiều dài: ");
-                    float length = Float.parseFloat(scanner.nextLine());
                     do {
-                        System.out.println("Mời nhập chiều rộng: ");
-                        float width = Float.parseFloat(scanner.nextLine());
-                        if (width > length) {
-                            System.out.println("Chiều rộng phải nhỏ hơn chiều dài, mời nhập lại!");
+                        System.out.println("Mời nhập chiều dài: ");
+                        float length = Float.parseFloat(scanner.nextLine());
+                        //Kiểm tra điều kiện phải > 0
+                        if (length <= 0) {
+                            System.out.println("Giá trị không hợp lệ, mời nhập lại");
                             continue;
                         }
-                        Retangle hinhChuNhat = new Retangle(length, width);
-                        hinhChuNhat.dienTich();
-                        hinhChuNhat.chuVi();
-                        System.out.println(hinhChuNhat);
+                        do {
+                            System.out.println("Mời nhập chiều rộng: ");
+                            float width = Float.parseFloat(scanner.nextLine());
+                            if (width <= 0) {
+                                System.out.println("Giá trị không hợp lệ, mời nhập lại");
+                                continue;
+                            }
+                            //Kiểm tra điều kiện dài > rộng
+                            if (width > length) {
+                                System.out.println("Chiều rộng phải nhỏ hơn chiều dài, mời nhập lại!");
+                                continue;
+                            }
+                            Retangle hinhChuNhat = new Retangle(length, width);
+                            hinhChuNhat.dienTich();
+                            hinhChuNhat.chuVi();
+                            System.out.println(hinhChuNhat);
+                            break;
+                        }
+                        while (true);
                         break;
                     }
                     while (true);
                 }
                 case 2 -> {
-                    System.out.println("Mời nhập độ dài cạnh: ");
-                    float side = Float.parseFloat(scanner.nextLine());
-                    Square hinhVuong = new Square(side);
-                    hinhVuong.dienTich();
-                    hinhVuong.chuVi();
-                    System.out.println(hinhVuong);
+                    do {
+                        System.out.println("Mời nhập độ dài cạnh: ");
+                        float side = Float.parseFloat(scanner.nextLine());
+                        if (side <= 0) {
+                            System.out.println("Giá trị không hợp lệ, mời nhập lại");
+                            continue;
+                        }
+                        Square hinhVuong = new Square(side);
+                        hinhVuong.dienTich();
+                        hinhVuong.chuVi();
+                        System.out.println(hinhVuong);
+                        break;
+                    }
+                    while (true);
                 }
             }
             break;
         }
         while (true);
-
     }
 }
