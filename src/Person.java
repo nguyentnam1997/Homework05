@@ -1,9 +1,11 @@
 public class Person {
-    private long id;
+
+    private int id;
+    public static int auId;  //tạo biến tĩnh để cho id tự động tăng
     private String name;
     private int age;
-    public Person(long id, String name, int age) {
-        this.id = id;
+    public Person(String name, int age) {
+        this.id = ++auId;
         this.name = name;
         this.age = age;
     }
@@ -11,7 +13,7 @@ public class Person {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

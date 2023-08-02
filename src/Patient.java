@@ -5,8 +5,8 @@ public class Patient extends Person {
     private int medicalNumber;
     private LocalDate hospitalizedDay;
 
-    public Patient(long id, String name, int age, int medicalNumber, LocalDate hospitalizedDay) {
-        super(id, name, age);
+    public Patient(String name, int age, int medicalNumber, LocalDate hospitalizedDay) {
+        super(name, age);
         this.medicalNumber = medicalNumber;
         this.hospitalizedDay = hospitalizedDay;
     }
@@ -17,7 +17,7 @@ public class Patient extends Person {
     }
 
     @Override
-    public void setId(long id) {
+    public void setId(int id) {
         super.setId(id);
     }
 

@@ -2,8 +2,8 @@ public class Doctor extends Person{
     private String specialist;
     private float workingHours;
 
-    public Doctor(long id, String name, int age, String specialist, float workingHours) {
-        super(id, name, age);
+    public Doctor(String name, int age, String specialist, float workingHours) {
+        super(name, age);
         this.specialist = specialist;
         this.workingHours = workingHours;
     }
@@ -30,7 +30,7 @@ public class Doctor extends Person{
     }
 
     @Override
-    public void setId(long id) {
+    public void setId(int id) {
         super.setId(id);
     }
 
